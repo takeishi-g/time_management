@@ -22,8 +22,8 @@ const Nav = () => {
         <div>
           <NavLink {...homePage} />
         </div>
-        <div>
-          <NavLink {...workersPage} />
+        <div className='flex'>
+          <NavLink {...workersPage}/>
           <NavLink {...suppliersPage} />
         </div>
       </div>
