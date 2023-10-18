@@ -1,12 +1,22 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { Inter } from 'next/font/google'
+import { useContext } from 'react'
+import { DataContext } from '../components/dataContext'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { workers } = useContext(DataContext)
+  console.log(workers)
   return (
-   <>
-        <a href="./createProject">create</a>
-   </>
-     
+   <div className=''>
+    <h1 className=' text-red-300'>Home</h1>
+    
+    {/* {data.map((value) => {
+      return(
+        <p>{value.name}</p>
+      )
+    })} */}
+   </div>
   )
 }
