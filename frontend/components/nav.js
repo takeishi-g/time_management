@@ -16,6 +16,16 @@ const Nav = () => {
     path: '/suppliers/',
   }
 
+  const processPage = {
+    pathname: '工程一覧',
+    path: '/process/',
+  }
+
+  const productsPage = {
+    pathname: '図面一覧',
+    path: '/products/'
+  }
+
   return (
     <div className=' container mx-auto'>
       <div className=' flex justify-between'>
@@ -25,6 +35,8 @@ const Nav = () => {
         <div className='flex'>
           <NavLink {...workersPage}/>
           <NavLink {...suppliersPage} />
+          <NavLink {...processPage} />
+          <NavLink {...productsPage} />
         </div>
       </div>
     </div>

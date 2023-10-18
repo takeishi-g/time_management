@@ -1,3 +1,4 @@
+import AddWorker from '@/components/addWorker'
 import WorkersList from '@/components/workersList'
 
 const Workers = () => {

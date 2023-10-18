@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Worker;
+use App\Models\Process;
 use Illuminate\Http\Request;
 
-class WorkerController extends Controller
+class ProcessController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $workers = Worker::all();
+        $processes = Process::all();
         return response()->json(
-            $workers, 200
+            $processes, 200
         );
     }
 
@@ -31,19 +31,19 @@ class WorkerController extends Controller
      */
     public function store(Request $request)
     {
-        $worker = new Worker();
-        $worker->name = $request->input('name');
-        $worker->save();
+        $process = new Process();
+        $process->name = $request->input('name');
+        $process->save();
 
         return response()->json(
-            $worker, 201
+            $process, 201
         );
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Worker $worker)
+    public function show(Process $process)
     {
         //
     }
@@ -51,7 +51,7 @@ class WorkerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Worker $worker)
+    public function edit(Process $process)
     {
         //
     }
@@ -59,7 +59,7 @@ class WorkerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Worker $worker)
+    public function update(Request $request, Process $process)
     {
         //
     }
@@ -69,15 +69,15 @@ class WorkerController extends Controller
      */
     public function destroy($id)
     {
-        $workers = Worker::find($id);
-        $workers->delete();
-        if($workers) {
+        $processes = Process::find($id);
+        $processes->delete();
+        if($processes) {
             return response()->json([
-                'message' => 'Worker deleted successfully',
+                'message' => 'Process deleted successfully',
             ], 200);
         } else {
             return response()->json([
-                'message' => 'Worker not found',
+                'message' => 'Process not found',
             ], 404);
         }
     }
